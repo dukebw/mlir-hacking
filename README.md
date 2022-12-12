@@ -36,8 +36,15 @@ $MLIR_BIN/mlir-opt ./src/constant-cse.mlir -cse | $MLIR_BIN/FileCheck ./src/cons
 ```
 
 
-## Generate TableGen for Toy Dialect
+## TableGen for Toy Dialect
 
 ```shell
 $MLIR_BIN/mlir-tblgen -gen-dialect-decls ./src/Toy/include/Toy/ToyDialect/ToyDialect.td -I $MLIR_SRC/include
+```
+
+
+## TableGen for Toy Op Definitions
+
+```shell
+$MLIR_BIN/mlir-tblgen -gen-op-defs ./src/Toy/include/Toy/ToyDialect/ToyOps.td -I $MLIR_SRC/include -I ./src/Toy/include
 ```
